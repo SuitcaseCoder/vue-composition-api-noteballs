@@ -1,7 +1,18 @@
 <template>
     <div class="notes">
+    <AddEditNote>
+        <template #buttons>
+            <button 
+                @click="addNote"
+                :disabled="!newNote"
+                class="button is-link has-background-success">
+                Add New Note
+            </button>
+        </template> 
 
-    <div class="card has-background-success-dark p-4 mb-5">
+    </AddEditNote>
+
+    <!-- <div class="card has-background-success-dark p-4 mb-5">
         <div class="field">
             <div class="control">
                 <textarea 
@@ -22,13 +33,12 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <Note
     v-for="note in storeNotes.notes"
     :key="note.id"
     :note="note"
-    @deleteClicked="deleteNote"
     />
     </div>
 </template>
@@ -37,6 +47,7 @@
 /* imports */
 import { ref } from 'vue'
 import Note from '@/components/Notes/note.vue'
+import AddEditNote from '@/components/Notes/AddEditNote.vue'
 import { useStoreNotes } from '@/stores/storeNotes'
 
 /* store */
@@ -55,11 +66,5 @@ const addNote = () => {
 
 }
 
-/* delete note */
-const deleteNote = idToDelete => {
-    notes.value = notes.value.filter(note => {
-        return note.id !== idToDelete
-    })
-}
 
 </script>
