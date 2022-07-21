@@ -2,6 +2,7 @@
     <div class="notes">
     <AddEditNote
         v-model="newNote"
+        placeholer="Add a new note"
         ref="addEditNoteRef"
     >
         <template #buttons>
@@ -15,12 +16,12 @@
 
     </AddEditNote>
 
-
     <Note
     v-for="note in storeNotes.notes"
     :key="note.id"
     :note="note"
     />
+
     </div>
 </template>
 
@@ -43,6 +44,7 @@ const addNote = () => {
     newNote.value = ''
     addEditNoteRef.value.focusTextarea()
 }
+
 
 
 </script>
