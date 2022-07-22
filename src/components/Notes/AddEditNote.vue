@@ -8,7 +8,7 @@
         class="label has-text-white"
 
     >
-        label text
+      {{ label }}
     </label>
 
         <div class="field">

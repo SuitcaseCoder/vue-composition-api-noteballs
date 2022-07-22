@@ -35,5 +35,14 @@ export const useStoreNotes = defineStore('storeNotes', {
     // editNote(idToEdit){
 
     // }
+  },
+  getters: {
+    getNoteContent: (state) => {
+        return (id) => {
+            return state.notes.filter(note => {
+                return note.id === id
+            })[0].content
+        }
+    }
   }
 })
