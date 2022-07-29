@@ -22,7 +22,7 @@ export const useStoreNotes = defineStore('storeNotes', {
 
         let note = {
             id: id,
-            content: newNoteContent.value
+            content: newNoteContent
         }
 
         this.notes.unshift(note) 

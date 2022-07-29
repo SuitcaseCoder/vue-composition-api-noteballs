@@ -16,7 +16,7 @@
                 <textarea 
                     v-model="modelValue"
                     @input="$emit('update:modelValue', modelValue)"
-                    class="textarea" :placeholder="props.placeholder" 
+                    class="textarea" :placeholder="placeholder" 
                     ref="textareaRef"
                 />
             </div>
