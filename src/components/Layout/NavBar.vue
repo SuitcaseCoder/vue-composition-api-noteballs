@@ -31,6 +31,7 @@
     >
     <div class="navbar-end">
         <RouterLink
+            @click="showMobileNav = false"
             to="/"
             class="navbar-item"
             active-class="is-active"
@@ -38,6 +39,7 @@
          Notes
         </RouterLink>
         <RouterLink
+            @click="showMobileNav = false"
             to="/stats"
             class="navbar-item"
             active-class="is-active"
@@ -57,6 +59,7 @@ import { ref } from 'vue'
 
 
 /* mobile nav */
+// determines whether or not navbar is being shown or not
 const showMobileNav = ref(false)
 
 
