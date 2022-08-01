@@ -31,7 +31,7 @@
 
 <script setup>
     /* imports */
-    import { computed } from 'vue'
+    import { computed, ref } from 'vue'
     import { useStoreNotes } from '@/stores/storeNotes';
 
     /* props */
