@@ -9,6 +9,16 @@
 <script setup>
 /* imports */
 import NavBar from '@/components/Layout/NavBar.vue'
+import { onMounted } from 'vue-demi'
+import { useStoreNotes } from './stores/storeNotes'
+
+/* store */
+const storeNotes = useStoreNotes()
+
+/* mounted */
+onMounted(()=>{
+  storeNotes.getNotes()
+})
 
 </script>
 
