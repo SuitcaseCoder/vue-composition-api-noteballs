@@ -68,6 +68,11 @@
 
 /* imports */
 import { ref, computed, reactive } from 'vue'
+import { useStoreAuth } from '@/stores/storeAuth'
+
+/* store */
+
+const storeAuth = useStoreAuth()
 
 /* register/login */
 
@@ -87,7 +92,16 @@ const credentials = reactive({
 
 /* submit */
 const onSubmit = () => {
-    console.log('form submitted');
+    if (!credentials.email || !credentials.password){
+        alert('Please enter an email and password')
+    }
+    else {
+        if(register.value){
+            storeAuth.registerUser(credentials)
+        } else {
+            storeAuth.loginUser(credentials)
+        }
+    }
 }
 
 
